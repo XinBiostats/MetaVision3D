@@ -22,8 +22,8 @@ git clone https://github.com/XinBiostats/MetaVision3D
 ```
 2. Requirements: MetaVision3D is implemented in Python. To install requirements
 ```bash
-pip install -r requirements.txt
+conda env create -f environment.yml
 ```
 ## Usage
 1. Download data from [Dropbox](https://www.dropbox.com/scl/fo/9ntjdocvj3rlopjrjnrxu/h?dl=0&rlkey=3ipjglxydmiioxika44bw2lzv) and put downloaded data into datasets folder.
-2. We created a demo ([demo.ipynb](https://github.com/XinBiostats/SAMI/blob/main/demo/demo.ipynb)) to demonstrate how to use SAMI. The results will be displayed inline and stored in [results](https://github.com/XinBiostats/SAMI/tree/main/results) folder.
+2. We created a demo ([demo.ipynb](https://github.com/XinBiostats/SAMI/blob/main/demo/demo.ipynb)) to demonstrate how to use SAMI. The results will be displayed inline or saved by users.
