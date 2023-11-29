@@ -18,6 +18,7 @@ def section_norm(df, compound, first_feature_index):
 class MetaNorm3D:
     def __init__(self, df, compound, first_feature='LPA_16_0_'):
         self.df = df
+        self.data = None
         self.compound = compound
         self.first_feature = first_feature
         self.first_feature_index = np.where(df.columns==first_feature)[0][0]
@@ -28,12 +29,12 @@ class MetaNorm3D:
         return self.df
 
     def section_norm(self):
-        data = self.df[self.df.columns[:self.first_feature_index].tolist() + [self.compound]]
-        norm_factor = data.groupby('tissue_id')[self.compound].median().median() / data.groupby('tissue_id')[self.compound].median()
+        self.data = self.df[self.df.columns[:self.first_feature_index].tolist() + [self.compound]]
+        norm_factor = self.data.groupby('tissue_id')[self.compound].median().median() / self.data.groupby('tissue_id')[self.compound].median()
         norm_factor.name = 'norm_factor'
-        data = data.merge(norm_factor, on='tissue_id')
-        data['result'] = np.array(data[self.compound]) * np.array(data['norm_factor'])
-        return data
+        self.data = self.data.merge(norm_factor, on='tissue_id')
+        self.data['result'] = np.array(self.data[self.compound]) * np.array(self.data['norm_factor'])
+        return self.data
 
 
         

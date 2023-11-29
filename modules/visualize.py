@@ -114,4 +114,13 @@ def display_interp_montage(imgs,cmap1,cmap2,scale):
     cbar2 = fig.colorbar(im2, cax=cbar_ax2, ticks=[0,np.percentile(d[d != 0], 99)])
     cbar2.mappable.set_clim(vmin=0,vmax=np.percentile(d[d != 0], 99))
     cbar2.ax.set_yticklabels(['low', 'high'])
+
+def overlap(matrix,cmap):
+    imgs = matrix[[0,len(matrix)//2,-1],:]
+    canvas = np.zeros_like(imgs[0], dtype='float64')
+    alpha = 0.1
+    for i in range(len(imgs)):
+        cv2.addWeighted(imgs[i], alpha, canvas, 1 - alpha, 0, canvas)
+    plt.imshow(canvas,cmap=cmap)
+    axis('off')
     

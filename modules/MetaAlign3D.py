@@ -4,7 +4,7 @@ import pandas as pd
 import cv2
 import os
 
-def create_slice(df_all, slice_number, reverse = False):
+def create_slice(df_all,slice_number, col='result', reverse = False):
     nslice = len(df_all.tissue_id.unique())
     if reverse:
         df_temp = df_all[df_all['tissue_id'] == nslice-slice_number]
@@ -45,7 +45,7 @@ def create_slice(df_all, slice_number, reverse = False):
 #     print(visited_y, "\n")
 
     reshaped_matrix = np.zeros((cnt_x, cnt_y))
-    for ii, vi in enumerate(eval("df_temp.result")):
+    for ii, vi in enumerate(eval(f"df_temp.{col}")):
         if not np.isnan(vi):
             x_ind = find_nearest(visited_x, x_values[ii])
             y_ind = find_nearest(visited_y, y_values[ii])
@@ -59,11 +59,11 @@ def find_nearest(array, value):
     idx = (np.abs(array - value)).argmin()
     return idx
 
-def create_compound_matrix(data,reverse=False):
+def create_compound_matrix(data,col='result',reverse=False):
     nslice = len(data.tissue_id.unique())
     matrix = np.zeros((nslice, 200, 350))
     for ii in range(matrix.shape[0]):
-        data_temp = create_slice(data, ii,reverse=reverse)
+        data_temp = create_slice(data, ii,col=col, reverse=reverse)
         x_vals = int((200 - data_temp.shape[0])/2) 
         y_vals = int((350 - data_temp.shape[1])/2) #find the (x,y) of the start vertex, '/2' means put the slice in the center
         #matrix[ii, int(x_vals/2):int(x_vals/2)+data_temp.shape[0], int(y_vals/2):int(y_vals/2)+data_temp.shape[1]] = data_temp
@@ -133,11 +133,11 @@ class MetaAlign3D:
             self.warp_matrix_all = np.load('./warpmatrix/warp_matrix_all.npy')
         else:
              raise ValueError("Warp matrix is not available. Please run get_warp_matrix() with reference compound first.")
-    def create_compound_matrix(self,reverse=False):
+    def create_compound_matrix(self,col='result',reverse=False):
         nslice = len(self.data.tissue_id.unique())
         self.matrix = np.zeros((nslice, 200, 350))
         for ii in range(self.matrix.shape[0]):
-            data_temp = create_slice(self.data, ii,reverse=reverse)
+            data_temp = create_slice(self.data, ii,col=col,reverse=reverse)
             x_vals = int((200 - data_temp.shape[0])/2) 
             y_vals = int((350 - data_temp.shape[1])/2) #find the (x,y) of the start vertex, '/2' means put the slice in the center
             self.matrix[ii, x_vals:x_vals+data_temp.shape[0], y_vals:y_vals+data_temp.shape[1]] = data_temp

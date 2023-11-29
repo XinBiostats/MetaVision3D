@@ -54,7 +54,15 @@ def seq_impute(imgs):
         matrix_corrected_imputation[target_img][impute_mask] = imputation[impute_mask]
     
     return matrix_corrected_imputation
-
+    
+def fully_impute(imgs):   
+    impute_list = []
+    for i in range(imgs.shape[0]):
+        _,neighbors,_,_ = find_neighbors(imgs,i)
+        imp_img = impute(neighbors)
+        impute_list.append(imp_img)
+    fully_imputed_matrix = np.array(impute_list)
+    return fully_imputed_matrix
 
 class MetaImpute3D:
     def __init__(self,matrix):
