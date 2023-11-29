@@ -126,12 +126,23 @@ def seq_align(matrix, warp_matrix_all):
 
 
 class MetaAlign3D:
-    def __init__(self,matrix):
+    def __init__(self,data):
+        self.data = data
+        self.matrix=None
         if os.path.exists('./warpmatrix/warp_matrix_all.npy'):
             self.warp_matrix_all = np.load('./warpmatrix/warp_matrix_all.npy')
         else:
              raise ValueError("Warp matrix is not available. Please run get_warp_matrix() with reference compound first.")
-        self.matrix=matrix
+    def create_compound_matrix(self,reverse=False):
+        nslice = len(self.data.tissue_id.unique())
+        self.matrix = np.zeros((nslice, 200, 350))
+        for ii in range(self.matrix.shape[0]):
+            data_temp = create_slice(self.data, ii,reverse=reverse)
+            x_vals = int((200 - data_temp.shape[0])/2) 
+            y_vals = int((350 - data_temp.shape[1])/2) #find the (x,y) of the start vertex, '/2' means put the slice in the center
+            self.matrix[ii, x_vals:x_vals+data_temp.shape[0], y_vals:y_vals+data_temp.shape[1]] = data_temp
+        return self.matrix
+    
     def seq_align(self):
         matrix_corrected = np.zeros((self.matrix.shape))
         matrix_corrected[0] = self.matrix[0]
