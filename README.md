@@ -12,8 +12,8 @@ This work is licensed under a
 [cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
 [cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
 
-<!--- We present a method for the simultaneous analysis of spatial metabolome, lipidome, and glycome from a single tissue section using mass spectrometry imaging. Our workflow includes a computational pipeline called __Spatial Augmented Multiomics Interface (SAMI)__ that offers multiomics integration, high dimensionality clustering, spatial anatomical mapping with matched multiomics features, and metabolic pathway enrichment to providing unprecedented insights into the spatial distribution and interaction of these biomolecules in mammalian tissue biology.
-![Main Figure](https://github.com/XinBiostats/SAMI/blob/main/figures/main.png)--->
+We introduce __MetaVision3D__, a novel pipeline driven by computer vision techniques for the transformation of serial 2D MALDI mass spectrometry imaging sections into a high-resolution 3D spatial metabolome. Our framework employs advanced algorithms for image registration, normalization, and interpolation to enable the integration of serial 2D tissue sections, thereby generating a comprehensive 3D model of unique diverse metabolites across host tissues at mesoscale.
+![MetaVision3D](https://github.com/XinBiostats/MetaVision3D/assets/136360597/e239688c-8b0e-4f84-ba35-08a0d1a7fa1b)
 
 ## Installation
 1. Download MetaVision3D:
