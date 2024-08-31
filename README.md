@@ -26,5 +26,5 @@ git clone https://github.com/XinBiostats/MetaVision3D
 conda env create -f environment.yml
 ```
 ## Usage
-1. Download data from [Dropbox](https://www.dropbox.com/scl/fi/5lc4sjudy1eby0ns80imq/3d_lipid.csv?rlkey=3e8yzh7gva8kzliwnc3xa2mt3&dl=0) and put downloaded data to "./MetaVision3D/data/"
+1. Download data from [Dropbox](https://www.dropbox.com/scl/fo/tbsqj4d27zsqbkexxak8r/AI3TuR-k6zvliJTHWx8mF-c?rlkey=aznpybkek32cgg84mi9dvovtp&st=f6l50m6w&dl=0) and put downloaded data to "./MetaVision3D/data/"
 2. We created a demo ([demo.ipynb](https://github.com/XinBiostats/MetaVision3D/blob/main/demo.ipynb)) to demonstrate how to use MetaVision3D. The results will be displayed inline or saved by users.
