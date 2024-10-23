@@ -1,4 +1,4 @@
-name: maldi3d
+name: metavision3d
 channels:
   - conda-forge
   - bioconda
