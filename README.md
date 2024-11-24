@@ -59,6 +59,6 @@ conda env create -f environment.yml
 ```
 -  Activate SAMI environment, find your R installation's home directory.
 ```bash
-conda activate MetaVision3D
+conda activate metavision3d
 ```
 - We created a demo ([demo.ipynb](https://github.com/XinBiostats/MetaVision3D/blob/main/demo.ipynb)) to demonstrate how to use MetaVision3D. The results will be displayed inline or saved by users.
