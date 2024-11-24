@@ -15,7 +15,7 @@ This work is licensed under a
 We introduce __MetaVision3D__, a novel pipeline driven by computer vision techniques for the transformation of serial 2D MALDI mass spectrometry imaging sections into a high-resolution 3D spatial metabolome. Our framework employs advanced algorithms for image registration, normalization, and interpolation to enable the integration of serial 2D tissue sections, thereby generating a comprehensive 3D model of unique diverse metabolites across host tissues at mesoscale.
 ![MetaVision3D](https://github.com/XinBiostats/MetaVision3D/assets/136360597/4e87e94f-c738-47b1-900a-fa0e605ac808)
 
-Links:  
+## Source:
 __MetaVision3D__:[https://www.biorxiv.org/content/10.1101/2023.11.27.568931v1](https://www.biorxiv.org/content/10.1101/2023.11.27.568931v1)  
 __Datasets__:xxx[xxx]
 
