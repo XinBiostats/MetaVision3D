@@ -28,7 +28,7 @@ git clone https://github.com/XinBiostats/MetaVision3D
 ```
 - Download [dataset](https://www.dropbox.com/scl/fo/qjdk94golwij84xfii15b/h?rlkey=etrdydm1iw86ntcprbem2wivn&dl=1) from Zenodo and put it in "./MetaVision3D/data/".
 - Download Docker desktop from [Docker website](https://www.docker.com), and install it on your machine.
-- Open Docker Tesktop first, then open the Terminal or PowerShell(Windows),and run below command with your MetaVision3D path:
+- Open Docker Tesktop first, then open the Terminal or PowerShell(Windows), run below command with your MetaVision3D path:
 ```bash
 docker run -it --rm --user root -e GRANT_SUDO=yes -p 8888:8888 -v "YOUR_SAMI_PATH:/home/jovyan/work" xinbiostats/metavision3d:latest
 
