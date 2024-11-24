@@ -37,7 +37,7 @@ example: docker run -it --rm --user root -e GRANT_SUDO=yes -p 8888:8888 -v "/Use
 
 - Find the highlighted link in your terminal and copy it to your browser. The link will not be the exactly same, but will show up at same place.
 ![docker_link](https://github.com/XinBiostats/SAMI/blob/main/figures/docker_link.png)
-- All set! You can play with our Demo now. [demo](https://github.com/XinBiostats/MetaVision3D/blob/main/demo.ipynb)
+- All set! You can play with our Demo now. ([demo](https://github.com/XinBiostats/MetaVision3D/blob/main/demo.ipynb))
 
 ### 2. Using Conda:
 Create your own environment for MetaVision3D.(Due to potential incompatibility issues caused by different operating systems and versions, it is recommended to use Docker.）
