@@ -15,16 +15,47 @@ This work is licensed under a
 We introduce __MetaVision3D__, a novel pipeline driven by computer vision techniques for the transformation of serial 2D MALDI mass spectrometry imaging sections into a high-resolution 3D spatial metabolome. Our framework employs advanced algorithms for image registration, normalization, and interpolation to enable the integration of serial 2D tissue sections, thereby generating a comprehensive 3D model of unique diverse metabolites across host tissues at mesoscale.
 ![MetaVision3D](https://github.com/XinBiostats/MetaVision3D/assets/136360597/4e87e94f-c738-47b1-900a-fa0e605ac808)
 
-## Installation
+## Implement
+MetaVision3D can be run through two different ways:
 
-1. Download MetaVision3D:
+### 1. Using Docker (Recommended):
+We have pre-configured the environment for you using Docker, which ensures a consistent and reliable environment and make it easy to get started.
+
+#### Steps:
+- Clone MetaVision3D from Github Repository:
 ```bash
 git clone https://github.com/XinBiostats/MetaVision3D
 ```
-2. Requirements: MetaVision3D is implemented in Python. To install requirements
+- Download [dataset](https://www.dropbox.com/scl/fo/qjdk94golwij84xfii15b/h?rlkey=etrdydm1iw86ntcprbem2wivn&dl=1) from Zenodo and put it in "./MetaVision3D/data/".
+- Download Docker desktop from [Docker website](https://www.docker.com), and install it on your machine.
+- Open Docker Tesktop first, then open the Terminal or PowerShell(Windows),and run below command with your MetaVision3D path:
+```bash
+docker run -it --rm --user root -e GRANT_SUDO=yes -p 8888:8888 -v "YOUR_SAMI_PATH:/home/jovyan/work" xinbiostats/metavision3d:latest
+
+example: docker run -it --rm --user root -e GRANT_SUDO=yes -p 8888:8888 -v "/Users/xin.ma/Desktop/MetaVision3D:/home/jovyan/work" xinbiostats/metavision3d:latest
+```
+
+- Find the highlighted link in your terminal and copy it to your browser. The link will not be the exactly same, but will show up at same place.
+![docker_link](https://github.com/XinBiostats/SAMI/blob/main/figures/docker_link.png)
+- All set! You can play with our Demo now. ([demo](https://github.com/XinBiostats/SAMI/blob/main/demo)) 
+
+### 2. Using Conda:
+Create your own environment for MetaVision3D.(Due to potential incompatibility issues caused by different operating systems and versions, it is recommended to use Docker.）
+
+#### Steps:
+- Clone MetaVision3D from Github Repository:
+```bash
+git clone https://github.com/XinBiostats/MetaVision3D
+```
+- Download [dataset](https://www.dropbox.com/scl/fo/qjdk94golwij84xfii15b/h?rlkey=etrdydm1iw86ntcprbem2wivn&dl=1) from Zenodo and put it in "./MetaVision3D/data/".
+
+- Open the Terminal or PowerShell(Windows), then install requirements:
 ```bash
 conda env create -f environment.yml
 ```
-## Usage
-1. Download data from [Dropbox](https://www.dropbox.com/scl/fo/tbsqj4d27zsqbkexxak8r/AI3TuR-k6zvliJTHWx8mF-c?rlkey=aznpybkek32cgg84mi9dvovtp&st=f6l50m6w&dl=0) and put downloaded data to "./MetaVision3D/data/"
-2. We created a demo ([demo.ipynb](https://github.com/XinBiostats/MetaVision3D/blob/main/demo.ipynb)) to demonstrate how to use MetaVision3D. The results will be displayed inline or saved by users.
+
+-  Activate SAMI environment, find your R installation's home directory.
+```bash
+conda activate SAMI
+```
+We created a demo ([demo.ipynb](https://github.com/XinBiostats/MetaVision3D/blob/main/demo.ipynb)) to demonstrate how to use MetaVision3D. The results will be displayed inline or saved by users.
