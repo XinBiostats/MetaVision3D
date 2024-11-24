@@ -17,7 +17,7 @@ We introduce __MetaVision3D__, a novel pipeline driven by computer vision techni
 
 ## Source:
 __MetaVision3D__: [https://www.biorxiv.org/content/10.1101/2023.11.27.568931v1](https://www.biorxiv.org/content/10.1101/2023.11.27.568931v1)  
-__Datasets__:xxx[xxx]
+__Datasets__: [Datasets](https://zenodo.org/records/14212427)
 
 ## Implement
 MetaVision3D can be run through two different ways:
@@ -30,7 +30,7 @@ We have pre-configured the environment for you using Docker, which ensures a con
 ```bash
 git clone https://github.com/XinBiostats/MetaVision3D
 ```
-- Download [dataset](xxx) from Zenodo and put it in "./MetaVision3D/data/".
+- Download [dataset](https://zenodo.org/records/14212427) from Zenodo and put it in "./MetaVision3D/data/".
 - Download Docker desktop from [Docker website](https://www.docker.com), and install it on your machine.
 - Open Docker Tesktop first, then open the Terminal or PowerShell(Windows), run below command with your MetaVision3D path:
 ```bash
@@ -51,7 +51,7 @@ Create your own environment for MetaVision3D.(Due to potential incompatibility i
 ```bash
 git clone https://github.com/XinBiostats/MetaVision3D
 ```
-- Download [dataset](xxx) from Zenodo and put it in "./MetaVision3D/data/".
+- Download [dataset](https://zenodo.org/records/14212427) from Zenodo and put it in "./MetaVision3D/data/".
 
 - Open the Terminal or PowerShell(Windows), then install requirements:
 ```bash
@@ -59,6 +59,6 @@ conda env create -f environment.yml
 ```
 -  Activate SAMI environment, find your R installation's home directory.
 ```bash
-conda activate SAMI
+conda activate MetaVision3D
 ```
 - We created a demo ([demo.ipynb](https://github.com/XinBiostats/MetaVision3D/blob/main/demo.ipynb)) to demonstrate how to use MetaVision3D. The results will be displayed inline or saved by users.
