@@ -1,0 +1,9 @@
+cff-version: 1.0.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: Ma
+  given-names: Xin
+orcid: https://orcid.org/0009-0009-3347-4257
+title: MetaVision3D: Automated Framework for the Generation of Spatial Metabolome Atlas in 3D
+version: v1.0.0
+date-released: 2024-11-24
