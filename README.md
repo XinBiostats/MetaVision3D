@@ -26,7 +26,7 @@ We have pre-configured the environment for you using Docker, which ensures a con
 ```bash
 git clone https://github.com/XinBiostats/MetaVision3D
 ```
-- Download [dataset](https://www.dropbox.com/scl/fo/qjdk94golwij84xfii15b/h?rlkey=etrdydm1iw86ntcprbem2wivn&dl=1) from Zenodo and put it in "./MetaVision3D/data/".
+- Download [dataset](xxx) from Zenodo and put it in "./MetaVision3D/data/".
 - Download Docker desktop from [Docker website](https://www.docker.com), and install it on your machine.
 - Open Docker Tesktop first, then open the Terminal or PowerShell(Windows), run below command with your MetaVision3D path:
 ```bash
@@ -47,13 +47,12 @@ Create your own environment for MetaVision3D.(Due to potential incompatibility i
 ```bash
 git clone https://github.com/XinBiostats/MetaVision3D
 ```
-- Download [dataset](https://www.dropbox.com/scl/fo/qjdk94golwij84xfii15b/h?rlkey=etrdydm1iw86ntcprbem2wivn&dl=1) from Zenodo and put it in "./MetaVision3D/data/".
+- Download [dataset](xxx) from Zenodo and put it in "./MetaVision3D/data/".
 
 - Open the Terminal or PowerShell(Windows), then install requirements:
 ```bash
 conda env create -f environment.yml
 ```
-
 -  Activate SAMI environment, find your R installation's home directory.
 ```bash
 conda activate SAMI
