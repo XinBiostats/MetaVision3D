@@ -30,7 +30,7 @@ git clone https://github.com/XinBiostats/MetaVision3D
 - Download Docker desktop from [Docker website](https://www.docker.com), and install it on your machine.
 - Open Docker Tesktop first, then open the Terminal or PowerShell(Windows), run below command with your MetaVision3D path:
 ```bash
-docker run -it --rm --user root -e GRANT_SUDO=yes -p 8888:8888 -v "YOUR_SAMI_PATH:/home/jovyan/work" xinbiostats/metavision3d:latest
+docker run -it --rm --user root -e GRANT_SUDO=yes -p 8888:8888 -v "YOUR_MetaVision3D_PATH:/home/jovyan/work" xinbiostats/metavision3d:latest
 
 example: docker run -it --rm --user root -e GRANT_SUDO=yes -p 8888:8888 -v "/Users/xin.ma/Desktop/MetaVision3D:/home/jovyan/work" xinbiostats/metavision3d:latest
 ```
