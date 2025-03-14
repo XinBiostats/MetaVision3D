@@ -35,7 +35,7 @@ def image_size(data):
     
     
 def create_slice(df_all,slice_number, compound, reverse = False):
-    tissue_id_list = df_all.tissue_id.unique().tolist()
+    tissue_id_list = sorted(df_all.tissue_id.unique().tolist())
     nslice = len(tissue_id_list)
     if reverse:
         df_temp = df_all[df_all['tissue_id'] == tissue_id_list[nslice-slice_number-1]]
